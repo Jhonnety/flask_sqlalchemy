@@ -8,8 +8,8 @@
     <div class="content">
         <form action="/update/{{task.tid}}" method="POST">
             <h1>Update task</h1>
-            <input type="text" name="content" id="content" value={{task.content}}>
-            <input type="owner" name="owner" id="owner" placeholder="Owner task" value={{task.owner}}>
+            <input type="text" name="content" id="content" value="{{task.content}}">
+            <input type="text" name="owner" id="owner" placeholder="Owner task" value="{{task.owner}}">
             <textarea  type="text" name="description" id="description" placeholder="Description task">{{task.description}}</textarea>
             <button type="submit">Update</button>
             <button type="button" onclick="goBack()" >Back</button>

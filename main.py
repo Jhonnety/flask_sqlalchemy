@@ -1,5 +1,5 @@
 from flask import Flask, redirect, render_template, url_for, request
-from sqlalchemy import DATETIME, create_engine, ForeignKey, Column, String, Integer, CHAR
+from sqlalchemy import DATETIME, create_engine, Column, String, Integer, CHAR
 from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
@@ -11,6 +11,9 @@ Base.metadata.create_all(bind=engine)
 
 Session = sessionmaker(bind=engine)
 session = Session()
+
+if __name__ == "__main__":
+    app.run()
 
 class Todo(Base):
     __tablename__ = "task"
@@ -26,12 +29,8 @@ class Todo(Base):
         self.owner = owner
 
     def __repr__(self):
-        return f"({self.tid} {self.content} {self.description} {self.date_created})"
+        return f"({self.tid} {self.content} {self.description} {self.owner} {self.date_created})"
     
-    
-if __name__ == "__main__":
-    app.run()
-
 @app.route('/index', methods=['POST', 'GET'])   
 @app.route('/', methods=['POST', 'GET'])
 def index():
