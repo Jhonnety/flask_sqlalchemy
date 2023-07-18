@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Update task</title>
+{% endblock %}
+
+{% block body %}
+    <div class="content">
+        <form action="/update/{{task.tid}}" method="POST">
+            <h1>Update task</h1>
+            <input type="text" name="content" id="content" value={{task.content}}>
+            <input type="owner" name="owner" id="owner" placeholder="Owner task" value={{task.owner}}>
+            <textarea  type="text" name="description" id="description" placeholder="Description task">{{task.description}}</textarea>
+            <button type="submit">Update</button>
+            <button type="button" onclick="goBack()" >Back</button>
+            {% if error %}
+                <span>The title is required</span>
+            {% endif %}
+        </form>
+    </div>
+    <script>
+        function goBack() {
+            window.location.href = "{{ url_for('index') }}";
+        }
+    </script>
+{% endblock %}

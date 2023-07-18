@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  background: rgb(0, 145, 255);
+}
+
+.table {
+  width: 70%;
+  margin-top: 2rem;
+  height: fit-content;
+  min-height: 70vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+  color: white;
+}
+
+.table .card {
+  background: rgba(0, 0, 0, 0.756);
+  height: fit-content;
+  border-radius: 19px;
+  margin: 20px auto;
+  width: 95%;
+  padding: 5px 0 20px 0;
+  display: block;
+}
+
+.table .card h1 {
+  font-size: 2rem;
+  color: #82FAAA;
+  width: 90%;
+  margin: 10px 5%;
+}
+
+.table .card h4 {
+  text-align: right;
+  width: 90%;
+  margin: 0 5%;
+}
+
+.table .card p {
+
+  width: 90%;
+  margin: 20px 5%;
+  color: black;
+  background: white;
+  height: fit-content;
+  min-height: 100px;
+  text-align: start;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 19px;
+}
+
+.table .card a {
+
+  width: 40%;
+  background: none;
+  border: 2px solid #82FAAA;
+  border-radius: 19px;
+  cursor: pointer;
+  color: #82FAAA;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.table .card a:hover {
+  transform: scale(1.1);
+}
+
+form {
+  background: rgba(0, 0, 0, 0.756);
+  width: 30%;
+  display: block;
+  min-height: 100vmin;
+  height: fit-content;
+}
+
+form h1 {
+  color: #82FAAA;
+}
+
+form input {
+  width: 90%;
+  height: 40px;
+  margin: 10px 0;
+  border-radius: 19px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+form textarea {
+  font-size: 1rem;
+  width: 90%;
+  margin: 10px 0;
+  border-radius: 19px;
+  padding: 10px;
+  height: 100px;
+  max-width: 90%;
+  min-width: 90%;
+  min-height: 40px;
+  box-sizing: border-box;
+}
+
+form button {
+  width: 90%;
+  height: 40px;
+  border-radius: 19px;
+  color: #82FAAA;
+  border: 2px solid;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+form button:hover {
+  transform: scale(1.05);
+}
+span{
+  color: red;
+  width: 90%;
+  margin: 20px 5%;
+}
+
+@media (max-width: 700px) {
+  .content {
+    display: block;
+  }
+  .table {
+    display: block;
+    width: 100%;
+  }
+  form{
+    width: 100%;
+  }
+}
